@@ -7,12 +7,12 @@
 // except according to those terms.
 
 #![deny(warnings)]
-#![cfg(feature = "nightly")] // TODO: remove that when never is stable
-#![feature(never_type)]
 
 use structopt::StructOpt;
 
-fn try_str(s: &str) -> Result<String, !> {
+// FIXME(@CreepySkeleton):
+// replace the return type with `Result<String, !>` once "never type" is stable
+fn try_str(s: &str) -> Result<String, i32> {
     Ok(s.into())
 }
 
